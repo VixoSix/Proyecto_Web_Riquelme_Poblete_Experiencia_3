@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.fondo-color{
+    background-color: #191919;
+    color: #FFF;
+}
+
+.fondo-color h2{
+    color: #E0050D;
+}
+
+.fondo-color b{
+    color: #E0050D;
+}
+
+h1, h2, h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: bold;
+}
+
+h4, h5, h6, p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* INICIO */
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HERO SECTION */
+.parallax-image{
+    background: linear-gradient(to bottom, rgb(0 0 0 / .75),
+    rgb(0 0 0/ .15)),
+    url("../img/fondo/BannerInicio.jpg");
+    height: 40rem;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.pagina-principal{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-pagina-principal{
+    text-align: center;
+}
+
+.wrap-pagina-principal h1{
+    font-size: 4rem;
+    color: #FFF;
+}
+
+.wrap-pagina-principal p{
+    font-size: 1.5rem;
+    color: #FFF;
+    width: 700px;
+}
+@media (max-width:700px){
+    .parallax-image{
+        height: 20rem;
+    }
+    .pagina-principal{
+        height: 60vh;
+    }
+    .wrap-pagina-principal h1{
+        font-size: 4rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 1rem;
+        width: 500px;
+    }
+}
+@media (max-width:500px){
+    .wrap-pagina-principal h1{
+        font-size: 3rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 14px;
+        width: 400px;
+    }
+}
+@media (max-width:400px){
+    .wrap-pagina-principal h1{
+        font-size: 3rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 12px;
+        width: 300px;
+    }
+}
+@media (max-width:300px){
+    .wrap-pagina-principal h1{
+        font-size: 2.5rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 10px;
+        width: 200px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CAROUSEL */
+.carr{
+    margin-top: 20px;
+}
+
+.fila-carr{
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+.carousel-item img{
+    height: 600px;
+}
+
+.subtitle-promociones{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.carousel-item h3{
+    font-size: 50px;
+}
+
+.carousel-item p{
+    font-size: 30px;
+}
+
+@media (max-width: 1200px){
+    .carousel-item img{
+        height: inherit;        
+    }
+}
+
+@media (max-width: 600px){
+    .carousel-caption h3{
+        font-size: 35px;
+    }
+    .carousel-caption p{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px){
+    .carousel-caption h3{
+        font-size: 30px;
+    }
+    .carousel-caption p{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 300px){
+    .carousel-caption h3{
+        font-size: 25px;
+    }
+    .carousel-caption p{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 699px){
+    .subtitle-promociones{
+        display: flex;
+        top: 300px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+body{
+    background-color:#191919;
+}
+
+.card{
+    border:none;
+}
+
+.wrap-testimonios h1{
+    color: #E0050D;
+}
+
+.wrap-testimonios{
+    padding-top: 5rem;
+}
+
+.user-content p{
+    margin-top:5px;
+    font-size:12px;
+}
+
+.user-content h5{
+    font-size:1.5rem;
+}
+
+
+.ratings i{
+    color:#E0050D;
+}

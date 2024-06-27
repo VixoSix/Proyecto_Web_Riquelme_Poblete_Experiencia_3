@@ -1,0 +1,91 @@
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HEADER */
+header {
+    background-color: black
+}
+
+.navbar-nav .nav-link{
+    /* color: #fff;
+    transition: color 0.3s ease;*/
+    font-size: 20px; 
+}
+
+.img-logo-navbar{
+    height: 50px;
+}
+
+/* ***************************** */
+.navbar-nav > li{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar-nav > li > a{
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(to right, #E0050D, 
+    #E0050D 50%, #fff 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 0.225rem 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-nav > li > a:before{
+    content: '';
+    background: #E0050D;
+    display: block;
+    position: absolute;
+    bottom: -0.125rem;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-nav > li > a:hover{
+    background-position: 0;
+}
+
+.navbar-nav > li > a:hover::before{
+    width: 100%;
+}
+
+.li_user{
+    padding-right: 77px;
+}
+
+.dropdown-menu{
+    background-color: #000000;
+}
+
+.li_user a{
+    color: #fff;
+}
+
+.dropdown-menu li a{
+    text-decoration: none;
+}
+
+
+.dropdown-menu li a:hover{
+    background-color: #000000;
+    color: #E0050D;
+    font-weight: bold;
+}
+
+.dropdown-toggle{
+    font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.6rem;
+}
+/* ***************************** */
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/

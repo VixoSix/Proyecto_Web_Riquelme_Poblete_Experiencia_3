@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>SHAOLIN/Carta</title>{% endblock title %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Tienda.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+{% block main_content %}
+
+<div class="wrap-titulo-agregar">
+    <h1 class="titulo-agregar">Agregar Producto</h1>
+</div>
+
+<section class="py-1" style="background-color: #191919;">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center justify-content-center" style="background-color: #191919;">
+            <div class="col-md-6">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.idRool.label}}</div>                        
+                        {{ rollForm.idRool}}
+                    </div>
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.nombreRool.label}}</div>                      
+                        {{ rollForm.nombreRool}}
+                    </div>
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.descripcionRool.label}}</div>                        
+                        {{ rollForm.descripcionRool}}
+                    </div>
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.stockRoll.label}}</div>                       
+                        {{ rollForm.stockRoll}}
+                    </div>
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.imagenRool.label}}</div>                       
+                        {{ rollForm.imagenRool}}
+                    </div>
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.precioRoll.label}}</div>                        
+                        {{ rollForm.precioRoll}}
+                    </div>
+
+                    <div class="form-group">
+                        <div style="color: #fff; margin-top: 1rem;">{{ rollForm.Envoltura.label}}</div>
+                        {{ rollForm.Envoltura}}
+                    </div>
+
+                    <input type="submit" value="Almacenar" class="btn btn-outline-dark flex-shrink-0 btn-agregar">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}
+{% block script %}
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .error-control{
+        border: 1px solid red;
+    }
+
+    label.error{
+        color: red;
+        width: 200px;
+        font-size: 0.8em;
+        margin-top:-5px;
+        margin-bottom: 10px;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .wrap-titulo-agregar{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-top: 2%;
+        color: #fff;
+    }
+
+    .titulo-agregar{
+        font-size: 3rem;
+    }
+    
+    .btn-agregar{
+        margin-top: 1rem;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .btn-agregar:hover{
+        background-color: #191919;
+    }
+</style>
+<script>
+$(function() {
+    $("#formulario").validate({
+        rules: {
+            idRool: "required",
+            nombreRool: "required",
+            descripcionRool: "required",
+            stockRoll: {
+                required: true,
+                number: true,
+                min: 1
+            },
+            imagenRool: "required",
+            precioRoll: "required",
+            Envoltura: "required"
+        },
+        messages: {
+            idRool: {
+                required: "Ingrese Id Rool"
+            },
+            nombreRool: {
+                required: "Ingrese Nombre Rool"
+            },
+            descripcionRool: {
+                required: "Ingrese Descripción Rool"
+            },
+            stockRoll: {
+                required: "Ingrese Stock Roll",
+                number: "El stock debe ser un número",
+                min: "El stock debe ser mayor a 0"
+            },
+            imagenRool: {
+                required: "Seleccione Imagen Rool"
+            },
+            precioRoll: {
+                required: "Ingrese Precio Roll"
+            },
+            Envoltura: {
+                required: "Seleccione Envoltura"
+            }
+        }
+    });
+});
+</script>
+{% endblock script %}

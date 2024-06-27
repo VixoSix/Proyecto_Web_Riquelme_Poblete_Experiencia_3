@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>SHAOLIN/QuienesSomos</title>{% endblock title %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Contáctanos.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+
+
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+
+{% block main_content %}
+<main class="seccion-main">
+    <!-- HERO SECTION -->
+    <div class="parallax-image">
+        <section class="pagina-principal">
+            <div class="wrap-pagina-principal">
+                <h1 class="titulo-pagina-principal">Contáctanos</h1>
+                <p class="parrafo-pagina-principal">
+                    ¿Necesitas ponerte en contacto con nosotros? Complete el formulario con su consulta, 
+                    escribanos al correo electrónico o a nuestro Whatsapp.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    
+  
+    <div class="wrap-form-contactanos">
+        <div class="wrap-info-contactanos">
+            <div class="box-info-contactanos">
+                <h1>Contáctate con nosotros</h1>
+                <ul class="ul-info">
+                    <li class="li-info"><img src="{% static 'img/Icons/phone-icon-red.png' %}">(2) 2629 6312</li>
+                    <li class="li-info"><img src="{% static 'img/Icons/mail-icon-red.png' %}">ShaolinSushi@gmail.com</li>
+                    <li class="li-info"><img src="{% static 'img/Icons/location-icon-red.png' %}">Av. El Salto 2746 - Recoleta</li>
+                </ul>
+
+                <div class="wrap-social-media">
+                    <ul class="social-media-buttons">
+                        <li class="li-social-media">
+                            <a href="https://www.facebook.com/Shaolin.Sushi.Recoleta" title="facebook" target="_blank">
+                                <img src="{% static 'img/Icons/facebook-icon-w.png' %}">
+                            </a>
+                        </li>
+                        <li class="li-social-media">
+                            <a href="https://wa.me/+56933200239" title="Whatsapp" target="_blank">
+                                <img src="{% static 'img/Icons/whatsapp-icon-w.png' %}">
+                            </a>
+                        </li>
+                        <li class="li-social-media">
+                            <a href="https://www.instagram.com/shaolinsushii/?hl=es" title="Instagram" target="_blank">
+                                <img src="{% static 'img/Icons/instagram-icon-w.png' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-form-box">
+            <form class="box" id="miFormulario">
+                <div class="input__wrapper">
+                    <input id="nombre" type="text" name="nombre" placeholder="Nombre" 
+                    required class="input__field" minlength="3">
+                    <label for="nombre" class="input__label">Nombre</label>
+                </div>
+                <div class="input__wrapper">
+                    <input id="correo" type="email" name="correo" placeholder="Correo" 
+                    required class="input__field">
+                    <label for="correo" class="input__label">Correo</label>
+                </div>
+                <div class="input__wrapper">
+                    <input id="asunto" type="text" name="asunto" placeholder="Asunto" 
+                    required class="input__field" minlength="3">
+                    <label for="asunto" class="input__label">Asunto</label>
+                </div>
+                <div class="input__wrapper">
+                    <textarea id="mensaje" name="mensaje" class="input__field mensaje-area" 
+                    tabindex="1" cols="150" rows="4" minlength="5" required 
+                    placeholder="Mensaje" minlength="3"></textarea>
+                    <label for="mensaje" class="input__label">Mensaje</label>
+                </div>
+
+                <span class="background">
+                    <label class='button' onclick="checkInputs()">
+                        <svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>
+                        Enviar
+                    </label>
+                </span>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}

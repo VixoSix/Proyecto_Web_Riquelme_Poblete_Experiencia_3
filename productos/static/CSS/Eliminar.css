@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background-color: #fff;
+}
+
+.fondo-color{
+    background-color: #191919;
+    color: #FFF;
+}
+
+.fondo-color h2{
+    color: #E0050D;
+}
+
+.fondo-color b{
+    color: #E0050D;
+}
+
+h1, h2, h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: bold;
+}
+
+h4, h5, h6, p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+main{
+    background-color: #191919;
+}
+
+.wrap-btn-eliminar input{
+    margin-right: 1rem;
+}
+
+.wrap-btn-eliminar button a{
+    text-decoration: none;
+    color: #000;
+}
+
+.wrap-btn-eliminar button a:hover{
+    color: #fff;
+}
+
+.wrap-titulo-eliminar{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2%;
+}
+
+.titulo-eliminar{
+    font-size: 3rem;
+}

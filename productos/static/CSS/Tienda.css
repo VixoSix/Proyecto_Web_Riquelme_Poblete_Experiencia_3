@@ -1,0 +1,446 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background-color: #000;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.fondo-color{
+    background-color: #191919;
+    color: #FFF;
+}
+
+.fondo-color h2{
+    color: #E0050D;
+}
+
+.fondo-color b{
+    color: #E0050D;
+}
+
+h1, h2, h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: bold;
+}
+
+h4, h5, h6, p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+main{
+    background-color: #191919;
+}
+
+body{
+    background-color: #191919;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix::after{
+    content:"";
+    display: table;
+    clear: both;
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CARTA */
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HERO SECTION */
+.parallax-image{
+    background: linear-gradient(to bottom, rgb(0 0 0 / .75),
+    rgb(0 0 0/ .15)),
+    url("../img/fondo/BannerCarta.jpg");
+    height: 40rem;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.pagina-principal{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-pagina-principal{
+    text-align: center;
+}
+
+.wrap-pagina-principal h1{
+    font-size: 4rem;
+    color: #FFF;
+}
+
+.wrap-pagina-principal p{
+    font-size: 1.5rem;
+    color: #FFF;
+    width: 700px;
+}
+@media (max-width:700px){
+    .parallax-image{
+        height: 20rem;
+    }
+    .pagina-principal{
+        height: 60vh;
+    }
+    .wrap-pagina-principal h1{
+        font-size: 4rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 1rem;
+        width: 500px;
+    }
+}
+@media (max-width:500px){
+    .wrap-pagina-principal h1{
+        font-size: 3rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 14px;
+        width: 400px;
+    }
+}
+@media (max-width:400px){
+    .wrap-pagina-principal h1{
+        font-size: 3rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 12px;
+        width: 300px;
+    }
+}
+@media (max-width:300px){
+    .wrap-pagina-principal h1{
+        font-size: 2.5rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 10px;
+        width: 200px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* MAIN SECTION */
+
+
+/* Barra de navegacion */
+/* ********************************************* */
+.wrap-navbar-scrollspy{
+    width: 90%;
+    margin-left: 5%;
+    background: transparent;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+}
+
+.wrap-navbar-scrollspy .navbar{
+    width: 100%;
+}
+
+.nav-pills{
+    background-color: #E0050D;
+}
+
+.nav-scroll-horizontal{
+    overflow-x: auto;
+}
+
+#navbar{
+    background-color: #E0050D;
+    padding-bottom: 0;
+}
+
+.nav-scroll-horizontal .nav-pills{
+    display: flex;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: start;
+}
+.nav-scroll-horizontal::-webkit-scrollbar{
+    height: .5rem;
+}
+
+.nav-scroll-horizontal::-webkit-scrollbar-track{
+    background: #fff;
+}
+
+.nav-scroll-horizontal::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.nav-pills li a{
+    color: #fff;
+    font-size: 20px;
+}
+
+.nav-pills li a:hover{
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Esto hace que se quede arriba */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+
+
+.wrap-rolls{
+    margin-bottom: 4rem;
+    background-color: #191919;
+}
+
+.wrap-titulo{
+    background-color: #E0050D;
+    width: 90%;
+    color: #fff;
+    margin-left: 5%;
+    margin-bottom: 2rem;
+}
+
+.wrap-titulo h1{
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.wrap-color-carta{
+    /* height: 100%; */
+    background-color: #191919;
+}
+
+.content-card h1{
+    font-size: 2rem;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.split:hover h1{
+    color: #161616;
+}
+
+.content-card p{
+    font-size: 1.3rem;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.split:hover p{
+    color: #161616;
+}
+
+.contenedor-card{
+    background: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.card{
+    width: 320px;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.32);
+    cursor: pointer;
+    position: relative;
+    transform-origin: center;
+    transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin: 0 16px 0 0;
+}
+
+.card:last-child {
+    margin: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card .content-card {
+    padding: 40px 24px 48px 24px;
+    position: relative;
+}
+
+.card .content-card h1,
+.card .content-card p{
+    transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card .content-card h1.copy,
+.card .content-card p.copy{
+    margin: 16px 0 0 0;
+}
+
+.card.split{
+    height: 450px;
+    background: rgba(22, 22, 22, 0.8);
+}
+  
+.card.split:before{
+    content: "";
+    width: 100%;
+    height: 0;
+    background: #f3f3f3;
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom;
+    transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+  
+.card.split:hover:before{
+    height: 246px;
+}
+
+.card.split .image-card img{
+    width: 100%;
+    height: 202px;
+}
+
+/* BOTON AGREGAR */
+/* ************************************ */
+.wrap-button{
+    width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	counter-increment: itemcounter;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 99;
+	pointer-events: none;
+}
+
+.wrap-button::before{
+    color: #000;
+    position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.button{
+    pointer-events: auto;
+	cursor: pointer;
+	background: #161616;
+	border: none;
+	padding: 1.5rem 3rem;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+    text-decoration: none;
+}
+
+.button::before, .button::after{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+    text-decoration: none;
+}
+
+.button-pallene{
+    font-family: aktiv-grotesk-extended, sans-serif;
+	font-weight: 700;
+    color: #fff;
+	border-radius: 0.5rem;
+	border: 2px solid #fff;
+	box-shadow: inset 0 0 0 0px #000;
+	transition: border-radius 0.3s, box-shadow 0.3s, color 0.3s;
+	transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.button-pallene:hover{
+    color: #e7e7e7;
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 40px #000;
+	transition-delay: 0s, 0s, 0.2s;
+    text-decoration: none;
+}
+/* ************************************ */
+
+
+/*RESPONSIVE*/
+/* ************************************ */
+@media (max-width: 1000px){
+    .contenedor-card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .card.split{
+        margin: 1rem;
+    }
+}
+@media (max-width: 1395px){
+    .content-card h1{
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 1240px){
+    .content-card h1{
+        font-size: 1.6rem;
+    }
+}
+@media (max-width: 1190px){
+    .content-card h1{
+        font-size: 1.4rem;
+    }
+}
+@media (max-width: 1090px){
+    .content-card h1{
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 1000px){
+    .content-card h1{
+        font-size: 2rem;
+    }
+}
+/* ************************************ */
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/

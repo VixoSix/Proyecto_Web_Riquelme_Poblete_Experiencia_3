@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Home</title>{% endblock title %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/DetalleCarrito.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+
+
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+
+{% block main_content %}
+
+
+
+<section class="page-banner" style="background-color: #E0050D;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-banner-content text-center">
+            <h3 class="page-title">Detalle de Compra</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--====== Page Banner Part Ends ======-->
+
+  <!--====== Order ID Style 1 Part Start ======-->
+
+<section class="order-id-wrapper pt-100 pb-100" style="margin-top: 2rem; margin-bottom: 2rem;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+            <div class="row">
+                <div class="col-md-7">
+                <div class="order-product mt-30">
+                    <div class="order-title">
+                    <h5 class="title">Productos</h5>
+                    </div>
+                    <div class="order-product-table table-responsive">
+                    <table class="table">
+                        <tbody>
+                            {% for detalle in detalles %}
+                        <tr>
+                            <td class="product">
+                            <div class="order-product-item d-flex">
+                                <div class="product-thumb">
+                                <img
+                                    src="{{ detalle.id_producto.imagenRool.url}}"
+                                    alt="product"
+                                    style="width: 65px;"/>
+                                </div>
+                                <div class="product-content media-body">
+                                <h5 class="title">
+                                    <a href="#">{{ detalle.id_producto.nombreRool }}</a>
+                                </h5>
+                                <ul>
+                                    <li><span>{{ detalle.id_producto.nombreRool }}</span></li>
+                                    <li><span>{{ detalle.cantidad }}</span></li>
+                                    <li><span> X  {{ detalle.subtotal}}</span></li>
+                                </ul>
+                                </div>
+                            </div>
+                            </td>
+                            <td class="price">
+                            <p class="product-price">${{ detalle.subtotal}}</p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    </div>
+
+                    {% if boleta.envio > 0 %}
+                    <div class="order-product-total">
+                    <div class="sub-total">
+                        <p class="value">Envio:</p>
+                        <p class="price">${{ boleta.envio}}</p>
+                    </div>
+                    {% endif %}
+                    <div class="sub-total">
+                        <p class="value">IVA</p>
+                        <p class="price">${{ boleta.impuestos}}</p>
+                    </div>
+                    </div>
+                    <div class="payable-total">
+                    <p class="value">Total:</p>
+                    <p class="price">${{ boleta.total}}</p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-5">
+                <div class="single-order-details mt-30">
+                    <div class="order-title">
+                    <h5 class="title">Orden Producto</h5>
+                    </div>
+                    <div class="order-details-content">
+                    <div class="single-details-item d-flex flex-wrap">
+                        <div class="details-title">
+                        <h6 class="title">Orden ID:</h6>
+                        </div>
+                        <div class="details-content">
+                        <p>{{ boleta.id_boleta }}</p>
+                        </div>
+                    </div>
+                    <div class="single-details-item d-flex flex-wrap">
+                        <div class="details-title">
+                        <h6 class="title">Fecha Compra:</h6>
+                        </div>
+                        <div class="details-content">
+                        <p>{{ boleta.fechaCompra }}</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="single-order-details mt-25">
+                    <div class="order-title">
+                    <h5 class="title">Datos Personales</h5>
+                    </div>
+                    <div class="order-details-content">
+                    <div class="single-details-item d-flex flex-wrap">
+                        <div class="details-title">
+                        <h6 class="title">Nombre:</h6>
+                        </div>
+                        <div class="details-content">
+                        <p>{{ usuario.username }}</p>
+                        </div>
+                    </div>
+                    <div class="single-details-item d-flex flex-wrap">
+                        <div class="details-title">
+                        <h6 class="title">Email:</h6>
+                        </div>
+                        <div class="details-content">
+                        <p>{{ usuario.email }}</p>
+                        </div>
+                    </div>
+
+                    {% if boleta.envio > 0 %}
+                    <div class="single-details-item d-flex flex-wrap">
+                        <div class="details-title">
+                        <h6 class="title">Metodo de Envio:</h6>
+                        </div>
+                        <div class="details-content">
+                        <p>Envío a domicilio</p>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="single-details-item d-flex flex-wrap">
+                        <div class="details-title">
+                        <h6 class="title">Metodo de Envio:</h6>
+                        </div>
+                        <div class="details-content">
+                        <p>Retiro en tienda</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                <div class="order-btn pt-20">
+                    <a href="{% url 'home' %}" class="btn btn-outline-dark flex-shrink-0">Volver al Inicio</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}

@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+
+{% block title %}<title>Home</title>{% endblock title %}
+{% load static %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'CSS/Perfil.css' %}" />{% endblock style %}
+
+{% block main_content %}
+
+<div class="wrap-titulo-perfil">
+  <h1 class="titulo-perfil">Perfil</h1>
+</div>
+
+<section class="py-1 section-perfil">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-6 align-items-center justify-content-center">
+            <div class="col-sm-3">
+                <img class="card-img-top mb-5 mb-md-0" src="{% static 'img/Icons/user-iconn.png' %}">
+            </div>
+            <div class="col-sm-3">
+                <h2 class="fw-bolder">Detalle</h2>
+                <div class="form-group d-flex">
+                    <label for="#" class="label-perfil" style="color: #fff; margin-right: 4px;">User: </label>
+                    <div style="color: #fff;">{{ request.user.username }}</div>
+                </div>
+                <div class="form-group d-flex">
+                    <label for="#" class="label-perfil" style="color: #fff; margin-right: 4px;">Nombre:</label>
+                    <div style="color: #fff">{{ request.user.first_name }}</div>
+                </div>
+                <div class="form-group d-flex">
+                    <label for="#" class="label-perfil" style="color: #fff; margin-right: 4px;">Apellido:</label>
+                    <div style="color: #fff">{{ request.user.last_name }}</div>
+                </div>
+                <div class="form-group d-flex">
+                    <label for="#" class="label-perfil" style="color: #fff; margin-right: 4px;">Email:</label>
+                    <div style="color: #fff">{{ request.user.email }}</div>  
+                </div>
+
+
+                <div class="d-flex wrap-btn-perfil">
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+                    </button>
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <!-- <a href="#" onclick="history.back();">Volver</a> -->
+                        <a href="{% url 'home' %}">Volver</a>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="section-boleta">
+    <div class="faq-container px-10 px-lg-5 my-5">
+        <div class="wrap-titulo-perfil">
+            <h1 class="titulo-perfil" style="color: #fff;">Compras Realizadas</h1>
+        </div>
+        {% if boletas %}
+            {% for boleta in boletas %}
+                <details>
+                    <summary>
+                        <span class="faq-title">Boleta {{ boleta.id_boleta }}</span>
+                    </summary>
+                    <div class="faq-content">
+                        <h3>Boleta:</h3>
+                        <ul>
+                            <li>
+                                <p><strong>Boleta ID:</strong> {{ boleta.id_boleta }}</p>
+                            </li>
+                            <li>
+                                <p><strong>Total:</strong> {{ boleta.total }}</p>
+                            </li>
+                            <li>
+                                <p><strong>Impuestos:</strong> {{ boleta.impuestos }}</p>
+                            </li>
+                            <li>
+                                <p><strong>Envío:</strong> {{ boleta.envio }}</p>
+                            </li>
+                            <li>
+                                <p><strong>Fecha de Compra:</strong> {{ boleta.fechaCompra }}</p>
+                            </li>
+                        </ul>
+                        
+      
+                        <h3>Detalles de la Boleta:</h3>
+                        <ul>
+                        {% for detalle in detalles_boletas %}
+                            {% if detalle.id_boleta.id_boleta == boleta.id_boleta %}
+                            <li>
+                                <p><strong>Producto:</strong> {{ detalle.id_producto.nombreRool }}</p>
+                            </li>
+                            <li>
+                                <p><strong>Cantidad:</strong> {{ detalle.cantidad }}</p>
+                            </li>
+                            <li>
+                                <p><strong>Subtotal:</strong> {{ detalle.subtotal }}</p>
+                            </li>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </details>
+            {% endfor %}
+
+        {% else %}
+            <p>No has realizado ninguna compra aún.</p>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock main_content %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{% if messages %}
+    {% for message in messages %}
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ message }}',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    {% endfor %}
+{% endif %}
+{% endblock script %}

@@ -1,0 +1,76 @@
+{% load static %}
+<!--FOOTER-->
+<footer class="pie-de-pagina">
+    <div class="wrap-piedepagina">
+        <div class="shaolin-piedepagina elemento-piedepagina">
+            <a class="logo-footer">
+                <img src="{% static 'img/logo/Logo.jpg' %}">
+            </a>
+            <p>
+                Disfruta de una excelente variedad de sushis con una combinacion de las mejores gastronomias
+                (PERUANA JAPONES)
+            </p>
+        </div>
+        <div class="texto-piedepagina elemento-piedepagina">
+            <h5>Direccion</h5>
+            <ul>
+                <li>Av. El Salto 2746</li>
+                <li>Comuna - Recoleta</li>
+                <li>Telefono: (2) 2629 6312</li>
+            </ul>
+        </div>
+        <div class="texto-piedepagina elemento-piedepagina">
+            <h5>Más informacion</h5>
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Inicio</a>
+                </li>
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li>
+                        <a href="{% url 'carta' %}">Productos</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'tienda' %}">Tienda</a>
+                </li>
+                {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li>
+                        <a href="{% url 'crear' %}">Agregar</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="{% url 'about' %}">Quiénes Somos</a>
+                </li>
+                <li>
+                    <a href="{% url 'contacto' %}">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="rrss-elemento-piedepagina elemento-piedepagina">
+            <h5>Redes Sociales</h5>
+            <ul>
+                <li><a href="https://www.facebook.com/Shaolin.Sushi.Recoleta" target="_blank">
+                        <img src="{% static 'img/Icons/facebook-icon-w.png' %}">
+                    </a></li>
+                <li><a href="https://wa.me/+56933200239" target="_blank">
+                        <img src="{% static 'img/Icons/whatsapp-icon-w.png' %}">
+                    </a></li>
+                <li><a href="https://www.instagram.com/shaolinsushii/?hl=es" target="_blank">
+                        <img src="{% static 'img/Icons/instagram-icon-w.png' %}">
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="creditos-piedepagina">
+        <div class="creditos-copy">
+            <p>©copyright · Todos los derechos reservados.</p>
+        </div>
+        <div class="creditos-legales">
+            <ul>
+                <li><a href="/">Politica de privacidad</a></li>
+                <li><a href="/">Politica de Cookies</a></li>
+                <li><a href="/">Aviso Legal</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>

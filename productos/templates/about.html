@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>SHAOLIN/QuienesSomos</title>{% endblock title %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/About.css' %}" />   
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+
+
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+
+{% block main_content %}
+
+<main>
+    <div class="parallax-image">
+        <!-- HERO SECTION -->
+        <section class="pagina-principal">
+            <div class="wrap-pagina-principal">
+                <h1 class="titulo-pagina-principal">QUIÉNES SOMOS</h1>
+                <p class="parrafo-pagina-principal">
+                    Descubre más sobre nuestra comunidad, experiencia y productos
+                </p>
+            </div>
+        </section>
+    </div>
+        
+    <div class="fondo-color">
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/xPJv_BHchEI?si=93c1yQB1hhk24FHS"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap-texto-quienes-somos">
+            <p>
+                <b>¡Bienvenidos a Shaolin Sushi!</b> Donde la tradición peruana se encuentra con la esencia japonesa para crear una experiencia culinaria única y emocionante. En Shaolin, fusionamos los sabores vibrantes y los ingredientes frescos de la cocina peruana con la artesanía y la elegancia de la gastronomía japonesa para ofrecer una experiencia gastronómica que cautiva los sentidos y deleita el paladar.
+            </p>
+        </div>
+        <br>
+
+        <div class="contenedor-quienes-somos">
+            <div class="wrap-izquierda-texto">
+                <h2>Visión</h2>
+                <p>
+                    En Shaolin Sushi, nuestra visión es trascender las expectativas gastronómicas, convirtiéndonos en el epítome de la excelencia en cada aspecto. 
+                    Nos esforzamos por alcanzar la perfección en la calidad de nuestros platos, en la atención al cliente y en la experiencia general que ofrecemos. 
+                    Nos inspiramos en la belleza de la fusión entre la tradición peruana y la esencia japonesa, y buscamos transmitir esa misma belleza en cada bocado que servimos. 
+                    Soñamos con ser reconocidos no solo como un restaurante, sino como un oasis de deleite culinario donde la armonía entre sabores y la atención meticulosa al detalle crean momentos inolvidables para cada uno de nuestros comensales. 
+                    Nuestra visión es ser líderes indiscutibles en el arte de combinar la pasión por la cocina con un servicio excepcional, inspirando a otros a buscar la excelencia en todo lo que hacen.
+                </p>
+            </div>
+
+            <div class="wrap-derecha-imagen">
+                <img src="{% static 'img/fondo/image-aboutus.jpeg' %}">
+            </div>
+        </div>
+
+        <div class="contenedor-quienes-somos2">       
+            <div class="wrap-izquierda-imagen">
+                <img src="{% static 'img/fondo/image-aboutus2.webp' %}">
+            </div>
+            <div class="wrap-derecha-texto">
+                <h2>Misión</h2>
+                <p>
+                    Nuestra misión en Shaolin Sushi es proporcionar una experiencia culinaria excepcional que trascienda los límites de lo ordinario. 
+                    Nos comprometemos a ofrecer productos de la más alta calidad, utilizando ingredientes frescos y técnicas culinarias innovadoras que resalten los sabores auténticos de la cocina peruano-japonesa. 
+                    Aspiramos a ser un destino de referencia, donde cada cliente se sienta bienvenido y valorado, y donde la calidad y la satisfacción del cliente sean nuestras prioridades principales. 
+                    Nos esforzamos por mantener precios justos para que nuestra propuesta sea accesible para todos, sin comprometer la calidad ni el servicio. 
+                    Nuestros objetivos incluyen seguir expandiendo nuestra presencia para llevar la experiencia de Shaolin Sushi a nuevas comunidades, al tiempo que mantenemos nuestros altos estándares de calidad y excelencia en cada uno de nuestros locales.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}

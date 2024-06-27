@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Home</title>{% endblock title %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Home.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+
+
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+
+{% block main_content %}
+
+<main class="seccion-main">
+    <!-- HERO SECTION -->
+    <div class="parallax-image">
+        <section class="pagina-principal">
+            <div class="wrap-pagina-principal">
+                <h1 class="titulo-pagina-principal">SHAOLIN</h1>
+                <p class="parrafo-pagina-principal">
+                    Sigue disfrutando del mejor sushi desde la comodidad de tu casa
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="fondo-color">
+        <br>
+        <h2 class="subtitle-promociones">Promociones Mixtas</h2>
+        <!-- CARRUSEL -->
+        <div class="container, carr">
+            <div class="row, fila-carr">
+                <div class="col-md-10 offset-md-1">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0"
+                                class="active"></button>
+                            <button type="button" data-bs-target="#carouselExampleControls"
+                                data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselExampleControls"
+                                data-bs-slide-to="2"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/Carta/Promocion/Promo1.jpg' %}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption">
+                                    <h3>15 Piezas</h3>
+                                    <p>$4.500</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/Carta/Promocion/Promo2.jpg' %}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption">
+                                    <h3>20 Piezas</h3>
+                                    <p>$6.500</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'img/Carta/Promocion/Promo3.jpg' %}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption">
+                                    <h3>30 Piezas</h3>
+                                    <p>$8.500</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}

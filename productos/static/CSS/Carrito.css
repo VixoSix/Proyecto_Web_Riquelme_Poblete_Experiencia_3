@@ -1,0 +1,16 @@
+.alert{
+    background-color: #fff;
+    color: #000;
+}
+
+@media (max-width: 867px){
+    .wrap-alert{
+        display: flex;
+    }
+    .titulo-carr{
+        font-size: 10px;
+    }
+    .subtitulo-carr{
+        font-size: 7px;
+    }
+}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Iniciar Sesion</title>{% endblock title %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'CSS/Login.css' %}" />{% endblock style %}
+
+
+{% block main_content %}
+<form action="#" method="post"  class="form-login" >
+    {% csrf_token %}
+    <div class="login-welcome">
+        <div class="fondo-logo">
+            <a href="#" title="Logo">
+                <img src="{% static 'img/logo/logo-pestaña.png' %}" alt="Logo" class="logo-welcome">
+            </a>
+        </div>
+        <h1>REGISTRARTE</h1>
+        <p>¡Por favor, rellene los campos!</p>
+    </div>
+    
+    <div class="wrap-form" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+        <div class="input-group" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;" >
+            <label for="" class="input-label">Nombre de usuario: </label>
+            {{form.username}}
+            
+        </div>
+
+        <div class="input-group" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;" id="group-user">
+            <label for="" class="input-label">Nombre: </label>
+            {{form.first_name}}
+            
+        </div>
+
+        <div class="input-group" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;" id="group-pass">
+            <label for="" class="input-label">Apellido: </label>
+            {{form.last_name}}                    
+        </div>
+
+        <div class="input-group" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;" id="group-pass">
+            <label for="" class="input-label">Email: </label>
+            {{form.email}}                  
+        </div>
+
+        <div class="input-group input-group-reg" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;" id="group-pass">
+            <label for="" class="input-label">Contraseña: </label>
+            {{form.password1}}                    
+        </div>
+
+        <div class="input-group input-group-reg" style="width: 100%; margin-bottom: 5px; max-width: 400px; justify-content: center;" id="group-pass">
+            <label for="" class="input-label">Confirmar Contraseña: </label>
+            {{form.password2}}
+        </div>
+    </div>
+
+    <div class="content-button">
+        <button class="form-button button">
+            <span>
+                <input type="submit" value="Registrar" style="background-color: transparent; color: #fff; border: none;">
+            </span>
+        </button>
+    </div>
+    
+
+    <div class="form-actions">
+        <div class="form-link">
+            <a href="{% url 'home' %}">Ir a Inicio</a> | 
+            <a href="{% url 'login' %}">Ir a Login </a>
+        </div>
+    </div>
+</form>
+
+{% endblock main_content %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{% if messages %}
+    {% for message in messages %}
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: '{{ message }}',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    {% endfor %}
+{% endif %}
+{% endblock script %}

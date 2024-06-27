@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    background-color: #fff;
+}
+
+.fondo-color{
+    background-color: #191919;
+    color: #FFF;
+}
+
+.fondo-color h2{
+    color: #E0050D;
+}
+
+.fondo-color b{
+    color: #E0050D;
+}
+
+h1, h2, h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: bold;
+}
+
+h4, h5, h6, p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+main{
+    background-color: #191919;
+}
+
+.btn-modificar a{
+    text-decoration: none;
+    color: #000;
+}
+
+.btn-modificar a:hover{
+    color: #fff;
+}
+
+.wrap-btn-modificar{
+    margin-top: 1rem;
+}
+
+.wrap-btn-modificar input{
+    margin-right: 1rem;
+}
+
+.label-modificar{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.input-modificar{
+    margin-bottom: 1rem;
+}
+
+.wrap-form-modificar{
+    position: relative;
+    top: 60px;
+}
+
+.imagen-modificar{
+    position: relative;
+    top: 20px;
+}
+
+.titulo-img-modificar{
+    font-weight: bold; 
+    font-size: 2rem; 
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.wrap-titulo-modificar{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2%;
+}
+
+.titulo-modificar{
+    font-size: 3rem;
+}
+
+.section-modificar{
+    padding-top: 0;
+}

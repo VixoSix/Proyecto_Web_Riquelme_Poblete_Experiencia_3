@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Detalle.css' %}" />
+{% endblock style %}
+
+{% block main_content %}
+<div class="wrap-titulo-detalle">
+    <h1 class="titulo-detalle">DETALLE</h1>
+</div>
+
+<section class="py-5 section-detalle">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img src="{{ roll.imagenRool.url }}" class="card-img-top mb-5 mb-md-0">
+            </div>
+            <div class="col-md-6">
+                <div class="small mb-1">ID: {{roll.idRool}}</div>
+                <h1 class="display-5 fw-bolder">{{ roll.nombreRool}}</h1>
+                <div class="fs-5 mb-5">
+                    <span>${{ roll.precioRoll}}</span>
+                </div>
+                <p class="lead">Descripcion: {{ roll.descripcionRool}}</p>
+                <p class="lead">Tipo de Envoltura: {{ roll.Envoltura}}</p>
+                <div class="d-flex">
+                    <button class="btn btn-outline-dark flex-shrink-0 btn-detalle" type="button">
+                        <a href="{% url 'carta' %}" class="link-detalle">Ir a Productos</a>
+                    </button>
+                    <button class="btn btn-outline-dark flex-shrink-0 btn-detalle" type="button">
+                        <a href="{% url 'modificar' roll.idRool %}" class="link-detalle">Modificar</a>
+                    </button>
+                    <button class="btn btn-outline-dark flex-shrink-0 btn-detalle" type="button">
+                        <a href="{% url 'eliminarProd' roll.idRool %}" class="link-detalle">Eliminar</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}

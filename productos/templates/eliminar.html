@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Eliminar.css' %}" />
+{% endblock style %}
+
+{% block main_content %}
+
+<div class="wrap-titulo-eliminar">
+    <h1 class="titulo-eliminar">Eliminar</h1>
+</div>
+
+<section class="py-5 section-eliminar">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <img src="{{ roll.imagenRool.url }}" class="card-img-top mb-5 mb-md-0">
+                <div class="form-group">
+                    <label for="imagen">Imagen: </label>
+                    {{ roll.imagenRool }}
+                </div>
+            </div>
+            <div class="col-md-6 wrap-form-eliminar">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="small mb-1">ID: {{ roll.idRool }}</div>
+                    <h1 class="display-5 fw-bolder">{{ roll.nombreRool }}</h1>
+                    <div class="fs-5 mb-5"><span>${{ roll.precioRoll }}</span></div>
+                    <p class="lead">Descripcion: {{ roll.descripcionRool }}</p>
+                    <p class="lead">Tipo de Envoltura: {{ roll.Envoltura }}</p>
+                    <div class="d-flex wrap-btn-eliminar">
+                        <input type="submit" value="Confirmar Eliminación" name="elimina" class="btn btn-outline-dark flex-shrink-0">
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <a href="{% url 'carta' %}">Productos</a>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>SHAOLIN/Tienda</title>{% endblock title %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Tienda.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+
+
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+
+{% block main_content %}
+
+
+<main data-bs-spy="scroll" data-bs-target=".navbar">
+    <div class="parallax-image">
+        <section class="pagina-principal">
+            <div class="wrap-pagina-principal">
+                <h1 class="titulo-pagina-principal">TIENDA</h1>
+                <p class="parrafo-pagina-principal">
+                    Te invito a probar nuestras exquisitas promociones y rolls a la carta
+                </p>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="wrap-navbar-scrollspy">
+        <nav class="navbar navbar-expand-sm justify-content-center" id="navbar">
+
+            <div class="nav-scroll-horizontal">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#Nikei" class="nav-link">Nikei</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Palta" class="nav-link">Palta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Queso" class="nav-link">Queso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Sesamo" class="nav-link">Sesamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Salmon" class="nav-link">Salmón</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Nigiris" class="nav-link">Nigiris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Hosomaki" class="nav-link">Hosomaki</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="col-4">
+        {% include "carrito.html" %}
+    </div>
+    {% endif %}
+
+    <div class="wrap-color-carta" id="carta">
+        {% for envoltura in envolturas %}
+        <div id="{{ envoltura.nombreCategoria }}" class="wrap-envuelto-{{ envoltura.nombreCategoria|lower|slugify }} wrap-rolls">
+                <div class="wrap-titulo">
+                    <h1>{{ envoltura.nombreCategoria|upper }}</h1>
+                </div>
+                <section class="contenedor-card">
+                    {% for roll in envoltura.roll_set.all %}
+                        {% if roll.stockRoll > 1 %}
+                            <div class="card split">
+                                <div class="image-card">
+                                    <img src="{{ roll.imagenRool.url }}">
+                                </div>
+                                <div class="content-card">
+                                    <h1>{{ roll.nombreRool }}</h1>
+                                    <p class="copy">${{ roll.precioRoll }}</p>
+                                    {% if user.is_authenticated %}
+                                    <div class="wrap-button">
+                                        <a href="{% url 'agregar' roll.idRool %}" class="button button-pallene">Agregar al carro</a>
+                                    </div>
+                                    {% else %}
+                                    <div class="wrap-button">
+                                        <a href="{% url 'login' %}" class="button button-pallene">Agregar al carro</a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            </div>
+        {% endfor %}
+    </div>
+    <br><br>
+</main>
+
+
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+{% if messages %}
+    {% for message in messages %}
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: '{{ message }}',
+                confirmButtonText: 'OK'
+            });
+        </script>
+    {% endfor %}
+{% endif %}
+{% endblock script %}

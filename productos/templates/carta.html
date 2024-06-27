@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>SHAOLIN/Carta</title>{% endblock title %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Header.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Carta.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/Footer.css' %} /">
+{% endblock style %}
+
+
+{% block header %}{% include 'partials/header.html' %}{% endblock header %}
+
+{% block main_content %}
+
+<main data-bs-spy="scroll" data-bs-target=".navbar">
+    <div class="parallax-image">
+        <section class="pagina-principal">
+            <div class="wrap-pagina-principal">
+                <h1 class="titulo-pagina-principal">Productos</h1>
+                <p class="parrafo-pagina-principal">
+                    Aqui podras ver el detalle o modificar y eliminar cada uno de los productos.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="wrap-navbar-scrollspy">
+        <nav class="navbar navbar-expand-sm justify-content-center" id="navbar">
+
+            <div class="nav-scroll-horizontal">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#Nikei" class="nav-link">Nikei</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Palta" class="nav-link">Palta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Queso" class="nav-link">Queso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Sesamo" class="nav-link">Sesamo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Salmon" class="nav-link">Salmón</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Nigiris" class="nav-link">Nigiris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#Hosomaki" class="nav-link">Hosomaki</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+    <div class="wrap-color-carta" id="carta">
+        {% for envoltura in envolturas %}
+        <div id="{{ envoltura.nombreCategoria }}" class="wrap-envuelto-{{ envoltura.nombreCategoria|lower|slugify }} wrap-rolls">
+                <div class="wrap-titulo">
+                    <h1>{{ envoltura.nombreCategoria|upper }}</h1>
+                </div>
+                <section class="contenedor-card">
+                    {% for roll in envoltura.roll_set.all %}
+                        <div class="card split">
+                            <div class="image-card">
+                                <img src="{{ roll.imagenRool.url }}">
+                            </div>
+                            <div class="content-card">
+                                <h1>{{ roll.nombreRool }}</h1>
+                                <p class="copy">${{ roll.precioRoll}}</p>
+                                <div class="wrap-button">
+                                    {% if request.user.is_authenticated and request.user.is_staff %}
+                                    <a href="{% url 'detalle' roll.idRool %}" class="button button-pallene">Detalle</a>
+                                    <a href="{% url 'modificar' roll.idRool %}" class="button button-pallene">Modificar</a>
+                                    <a href="{% url 'eliminarProd' roll.idRool %}" class="button button-pallene">Eliminar</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </section>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock main_content %}
+{% block footer %}{% include 'partials/footer.html' %}{% endblock footer %}
+

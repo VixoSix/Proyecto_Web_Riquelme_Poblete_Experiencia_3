@@ -1,0 +1,64 @@
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Carrito.css' %}" />
+{% endblock style %}
+<body>
+<div  role="alert" class="wrap-alert" style="background-color: #fff; display: inline-block; margin-bottom: 3rem; margin-left: 1rem;">
+    <table class="table table-bordered alert alert-warning">
+        <thead>
+            <tr class="text-center">
+                <th colspan="3" style="font-weight:bold; font-size:18px" class="titulo-carr">CARRITO</th>
+            </tr>
+            <tr>
+                <th style="font-size:15px; font-weight: bold; color:black; text-align: center;" class="subtitulo-carr">NOMBRE ROLL</th>
+                <th style="font-size:15px; font-weight: bold; color:black; text-align: center;">PRECIO</th>
+                <th style="font-size:15px; font-weight: bold; color:black; text-align: center;">CANTIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.carrito.items %}
+                {% for key, value in request.session.carrito.items %} 
+                    <tr>
+                        <td style="font-size:13px">{{ value.nombre }}</td>
+                        <td style="font-size:13px">$ {{ value.precio }}</td>
+                        <td style="font-size:13px">{{ value.cantidad }}
+                            <a href="{% url 'agregar' value.roll_id %}" class="badge btn btn-primary">+</a>
+                            <a href="{% url 'restar'  value.roll_id %}" class="badge btn btn-warning">-</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total : </th>
+                        <td colspan="2">$ {{value.total}}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-info text-center" style="font-weight: bold; background-color: #fff; color: #000;">Sin Productos</div>
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <hr>
+
+    <div class="row text-center" style="padding-bottom: 1rem;">
+        <div class="col-6">
+            <a href="{% url 'limpiar' %}" class="btn btn-outline-dark flex-shrink-0">Limpiar</a> 
+        </div>
+        <div class="col-6">
+            <a href="{% url 'realizar' %}" class="btn btn-outline-dark flex-shrink-0">Comprar</a>
+        </div>
+
+    </div>
+</div>
+
+</body>

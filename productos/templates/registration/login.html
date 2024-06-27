@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Iniciar Sesion</title>{% endblock title %}
+{% load static %}
+{% block style %}<link rel="stylesheet" href="{% static 'CSS/Login.css' %}" />{% endblock style %}
+
+
+{% block main_content %}
+
+
+<form action="#" method="POST" class="form-login" id="form-login">
+    {% csrf_token %}
+    <div class="login-welcome">
+        <div class="fondo-logo">
+            <a href="#" title="Logo">
+                <img src="{% static 'img/logo/logo-pestaña.png' %}" alt="Logo" class="logo-welcome">
+            </a>
+        </div>
+        <h1>INICIO DE SESIÓN</h1>
+        <p>¡Por favor, introduce tu usuario y contraseña!</p>
+    </div>
+    
+    <div class="wrap-form" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+        <div class="input-group" id="group-email" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;">
+            <label for="" class="input-label label">Nombre de Usuario: </label>
+            <div class="">{{form.username}}</div>
+        </div>
+
+        <div class="input-group" id="group-pass" style="width: 100%; margin-bottom: 20px; max-width: 400px; justify-content: center;">
+            <label for="" class="input-label label">Contraseña: </label>
+            {{form.password}}
+        </div>
+        <div class="input-group" style="width: 100%; margin-bottom: 10px; max-width: 400px;">
+            {% if form.errors %}
+            <p style="color: red; font-size: 12px;">Usuario y/o contraseña incorrecto. Inténtalo de nuevo.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="content-button">
+        <button class="form-button button">
+            <span>
+                <input class="input-login" type="submit" value="Iniciar sesión" style="background-color: transparent; color: #fff; border: none;">
+            </span>
+        </button>
+    </div>
+    
+
+
+    <div class="form-actions">
+        <div class="form-link">
+            <span>¿No tienes cuenta?</span>
+            <a href="{% url 'registrar' %}">Regístrarte</a> | 
+            <a href="{% url 'home' %}">Inicio</a>
+        </div>
+    </div>
+
+</form>
+
+
+
+{% endblock main_content %}

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'CSS/Modificar.css' %}" />
+{% endblock style %}
+
+{% block main_content %}
+
+<div class="wrap-titulo-modificar">
+    <h1 class="titulo-modificar">Modificar</h1>
+</div>
+
+<section class="py-1 section-modificar">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6">
+                <div class="titulo-img-modificar">{{ forModificar.imagenRool.label }}</div>
+                
+                {% if forModificar.instance.imagenRool %}
+                    <img src="{{ forModificar.instance.imagenRool.url }}" class="card-img-top mb-5 mb-md-0">
+                {% else %}
+                    <p style="color: red;">Producto sin foto</p>
+                {% endif %}
+
+                <div class="imagen-modificar">{{ forModificar.imagenRool }}</div>
+            </div>
+            <div class="col-md-6 wrap-form-modificar">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <div class="label-modificar">{{ forModificar.idRool.label }}</div>
+                        <div class="input-modificar">{{ forModificar.idRool}}</div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-modificar">{{ forModificar.nombreRool.label }}</div>
+                        <div class="input-modificar">{{ forModificar.nombreRool}}</div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-modificar">{{ forModificar.descripcionRool.label }}</div>
+                        <div class="input-modificar">{{ forModificar.descripcionRool}}</div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-modificar">{{ forModificar.stockRoll.label }}</div>
+                        <div class="input-modificar">{{ forModificar.stockRoll}}</div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-modificar">{{ forModificar.precioRoll.label }}</div>
+                        <div class="input-modificar">{{ forModificar.precioRoll}}</div>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-modificar">{{ forModificar.Envoltura.label }}</div>
+                        <div class="input-modificar">{{ forModificar.Envoltura}}</div>
+                        
+                    </div>
+                    
+                    <div class="d-flex wrap-btn-modificar">
+                        <input type="submit" value="Modificar" class="btn btn-outline-dark flex-shrink-0">
+                        <button class="btn btn-outline-dark flex-shrink-0 btn-modificar" type="button">
+                            <a href="#" onclick="history.back();" class="volver-modificar">Volver atrás</a>
+                        </button>
+                    </div>
+                </form>
+                
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}

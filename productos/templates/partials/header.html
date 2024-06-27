@@ -1,0 +1,66 @@
+{% load static %}
+
+<header>
+    <!-- barra navegacion -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-clase">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="img-logo-navbar" src="{% static 'img/logo/Logo.jpg' %}">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                    </li>
+                    {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'carta' %}">Productos</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tienda' %}">Tienda</a>
+                    </li>
+                    {% if request.user.is_authenticated and request.user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crear' %}">Agregar</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">Quiénes somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacto' %}">Contáctanos</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown li_user">
+                        <!-- <a href="{% url 'perfil' %}" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                            <span class="align-middle" class="nav-link">{{ user.username }}</span>
+                        </a> -->
+                        <span class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">{{ user.username }}</span>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{% url 'perfil' %}" class="dropdown-item">Perfil</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'cerrar' %}" class="dropdown-item">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registrar' %}">Registrar</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

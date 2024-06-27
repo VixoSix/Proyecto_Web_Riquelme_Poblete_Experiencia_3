@@ -1,0 +1,465 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.fondo-color{
+    background-color: #191919;
+    color: #FFF;
+}
+
+.fondo-color h2{
+    color: #E0050D;
+}
+
+.fondo-color b{
+    color: #E0050D;
+}
+
+h1, h2, h3{
+    font-family: "Bebas Neue", sans-serif;
+    font-style: bold;
+}
+
+h4, h5, h6, p{
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* CONTÁCTANOS */
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* HERO SECTION */
+.parallax-image{
+    background: linear-gradient(to bottom, rgb(0 0 0 / .75),
+    rgb(0 0 0/ .15)),
+    url("../img/fondo/BannerContactanos.jpg");
+    height: 40rem;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.pagina-principal{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap-pagina-principal{
+    text-align: center;
+}
+
+.wrap-pagina-principal h1{
+    font-size: 4rem;
+    color: #FFF;
+}
+
+.wrap-pagina-principal p{
+    font-size: 1.5rem;
+    color: #FFF;
+    width: 700px;
+}
+
+@media (max-width:700px){
+    .parallax-image{
+        height: 20rem;
+    }
+    .pagina-principal{
+        height: 60vh;
+    }
+    .wrap-pagina-principal h1{
+        font-size: 4rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 1rem;
+        width: 500px;
+    }
+}
+@media (max-width:500px){
+    .wrap-pagina-principal h1{
+        font-size: 3rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 14px;
+        width: 400px;
+    }
+}
+@media (max-width:400px){
+    .wrap-pagina-principal h1{
+        font-size: 3rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 12px;
+        width: 300px;
+    }
+}
+@media (max-width:300px){
+    .wrap-pagina-principal h1{
+        font-size: 2.5rem;
+    }
+    .wrap-pagina-principal p{
+        font-size: 10px;
+        width: 200px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* MAIN SECTION */
+.wrap-form-contactanos{
+    display: flex;
+}
+
+.wrap-info-contactanos{
+    width: 55%;
+    background: #191919;
+    height: 100vh;
+}
+
+.wrap-form-box{
+    width: 45%;
+    background: #191919;
+    height: 100vh;
+}
+
+.box-info-contactanos{
+    margin-top: 80%;
+
+    margin-left: 15%;
+}
+
+.box-info-contactanos h1{
+    color: #fff;
+    margin-left: 30px;
+}
+
+.ul-info{
+    margin-top: 2rem;
+}
+
+.li-info{
+    list-style: none;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: .5rem;
+}
+
+.li-info img{
+    width: 20px;
+    margin-right: 1rem;
+}
+
+
+
+/* Botones redes sociales */
+/* ************************** */
+.social-media-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin-top: 2.5rem;
+}
+
+.li-social-media{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: grid;
+    background-color: #E0050D;
+    place-items: center;
+    transition: all 0.3s;
+    border: 1px solid #E0050D;
+}
+
+.li-social-media a{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.li-social-media:hover {
+    background-color: #191919;
+    border: 1px solid #E0050D;
+    border-radius: 8px;
+}
+
+.li-social-media a img {
+    height: 1.5rem;
+    width: 1.5rem;
+    stroke: #fff;
+    stroke-width: 1.75;
+    transition: 0.8s;
+}
+
+.li-social-media:hover img {
+    stroke: #E0050D;
+    transform: rotateY(360deg);
+    stroke-width: 1.75;
+}
+/* ************************** */
+
+/* FORMULARIO */
+/* ************************** */
+.box{
+    background-color: #191919;
+    padding: 1.5rem;
+    max-width: fit-content;
+    width: 100%;
+    padding-top: 0.75rem;
+    border-radius: 1rem;
+    margin-left: 50px;
+}
+
+.wrap-form-box{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.input__wrapper {
+    position: relative;
+    padding: 1rem 0 0;
+}
+  
+.input__field {
+    border: 1px solid #fff;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: #999;
+    padding: 0.5rem;
+    padding-right: 2rem;
+    background: transparent;
+    transition: border-color 0.2s;
+    width: 450px;
+}
+  
+.input__field::placeholder {
+    color: transparent;
+}
+  
+.input__field:placeholder-shown ~ .input__label {
+    font-size: 1rem;
+    cursor: text;
+    color: #fff;
+    top: 1.5rem;
+}
+  
+  
+label,
+.input__field:focus ~ .input__label {
+    position: absolute;
+    top: 0.375rem;
+    padding: 0 0.25rem;
+    background-color: #191919;
+    display: block;
+    font-size: 0.875rem;
+    left: 0.5rem;
+    color: #fff;
+    transition: 0.3s;
+}
+  
+.input__field:focus ~ .input__label {
+    color: #E0050D;
+}
+  
+.input__field:focus {
+    border: 1px solid #E0050D;
+    outline: 1px solid #E0050D;
+}
+
+.mensaje-area{
+    width: 450px;
+    resize: none; /* Evita que se pueda ajustar el tamaño del textarea */
+}
+
+/* BOTON */
+.background {
+    background-color: #191919;
+    display: grid;
+    place-items: left;
+}
+
+.button {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    max-width: 160px; 
+    width: 100%; 
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease-in;
+    margin-top: 1.5rem;
+}
+
+.button:hover {
+    color: red;
+}
+
+.button svg {
+    height: 40px;
+    left: 0;
+    top: 0; 
+    position: absolute;
+    width: 100%; 
+}
+
+.button rect {      
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 450, 0;
+    transition: all 0.5s linear;
+}
+
+.button:hover rect {
+    stroke-width: 5;
+    stroke-dasharray: 20, 300;
+    stroke-dashoffset: 48;
+    stroke: red;
+    transition: all 2s cubic-bezier(
+        0.22, 1, 0.25, 1
+    );
+}
+/* ************************** */
+
+
+
+
+/* RESPONSIVE */
+/* ******************************************** */
+@media (max-width:1220px){
+    .wrap-form-box{
+        display: grid;
+    }
+    .box{
+        margin-left: 0;
+    }
+}
+
+@media (max-width:1110px){
+    .wrap-info-contactanos{
+        width: 45%;
+    }
+    .wrap-form-box{
+        width: 55%;
+    }
+    .box-info-contactanos{
+        margin-left: 20px;
+    }
+    .box-info-contactanos h1{
+        margin-left: 0;
+    }
+    .ul-info{
+        padding-left: 0;
+    }
+    .social-media-buttons{
+        padding-left: 0;
+    }
+}
+
+@media (max-width:950px){
+    .wrap-form-contactanos{
+        display: grid;
+    }
+    .wrap-info-contactanos{
+        width: 100%;
+        height: 100%;
+    }
+    .wrap-form-box{
+        width: 100%;
+    }
+    .box-info-contactanos{
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 4rem;
+    }
+    .box-info-contactanos h1{
+        text-align: center;
+    }
+    .ul-info{
+        margin-left: 20%;
+    }
+    .social-media-buttons{
+        margin-left: 20%;
+    }
+    .wrap-form-box{
+        justify-content: center;
+        height: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width:575px){
+    .box-info-contactanos{
+        width: 70%;
+        margin-left: 15%;
+    }
+    .ul-info{
+        margin-left: 15%;
+    }
+    .social-media-buttons{
+        margin-left: 15%;
+    }
+}
+
+@media (max-width:500px){
+    .input__field{
+        width: 350px;
+    }
+    #mensaje{
+        width: 350px;
+    }
+    .li-info{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:400px){
+    .input__field{
+        width: 250px;
+    }
+    #mensaje{
+        width: 250px;
+    }
+    .li-info{
+        font-size: 12px;
+    }
+}
+
+@media (max-width:300px){
+    .input__field{
+        width: 150px;
+    }
+    #mensaje{
+        width: 150px;
+    }
+    .li-info{
+        font-size: 10px;
+    }
+}
+/* ******************************************** */
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/

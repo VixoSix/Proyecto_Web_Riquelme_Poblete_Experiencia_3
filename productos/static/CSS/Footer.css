@@ -1,0 +1,124 @@
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* FOOTER */
+footer{
+    background-color: #000000;
+    color: #999;
+}
+
+footer ul{
+    padding: 0;
+}
+
+.wrap-piedepagina{
+    display: grid;
+    grid-template-columns: 30% 15% 15% 20%;
+    column-gap: 5%;
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.elemento-piedepagina h5{
+    margin: 1rem 0;
+}
+
+.texto-piedepagina{
+    line-height: 2;
+}
+
+.texto-piedepagina h5{
+    color: #fff;
+}
+
+.shaolin-piedepagina{
+    margin-top: 1rem;
+}
+
+.shaolin-piedepagina h3{
+    color: #fff;
+}
+
+.texto-piedepagina li a{
+    color: #999;
+    text-decoration: none;
+}
+
+.texto-piedepagina li a:hover{
+    color: #E0050D;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.texto-piedepagina li{
+    list-style: none;
+}
+
+.rrss-elemento-piedepagina h5{
+    color: #fff;
+}
+
+.rrss-elemento-piedepagina ul{
+    display: flex;
+}
+
+.rrss-elemento-piedepagina img{
+    width: 45px;
+}
+
+.rrss-elemento-piedepagina img:hover{
+    width: 50px;
+    transition: .2s;
+}
+
+.rrss-elemento-piedepagina li{
+    list-style: none;
+    margin-right: 1rem;
+}
+
+.creditos-piedepagina{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    color: #576171;
+    font-size: .9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.creditos-piedepagina ul{
+    display: flex;
+}
+
+.creditos-piedepagina ul li{
+    padding-right: 1rem;
+    list-style: none;
+}
+
+.creditos-piedepagina ul li a{
+    color: #576171;
+    text-decoration: none;
+}
+
+.logo-footer img{
+    height: 50px;
+}
+
+
+@media (max-width:768px){
+    .wrap-piedepagina{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:480px){
+    .wrap-piedepagina{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width:320px){
+    .creditos-piedepagina{
+        flex-flow: column;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
